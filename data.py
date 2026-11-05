@@ -1,22 +1,4 @@
-"""FDCompCN loader + the split used in the paper.
 
-The dataset ships as a DGL binary file (`datasets/FDCompCN_dataset/comp.dgl`).
-DGL is not required: the file is a sequence of records
-
-    [u64 name_len][name][magic 8B][u64 0][u64 1][u32 ndim][u32 dtype]
-    [ndim x u64 dims][u64 nbytes][raw little-endian data]
-
-and is parsed directly below (same reader as analysis/dgl_fast.py).
-
-Graph: 5,317 companies, 57 features, 559 fraudulent (10.51 %).
-Edges:  three relations (C-I-C invest, C-P-C sale, C-S-C provide); the model uses
-        their union, symmetrised (3,675 unique links; 7,489 directed records).
-
-Split (given in the manuscript):
-        train 2,658 (2,379 benign / 279 fraud)
-        val   1,064 (  953 benign / 111 fraud)
-        test  1,595 (1,426 benign / 169 fraud)
-"""
 from __future__ import annotations
 
 import mmap
