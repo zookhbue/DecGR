@@ -1,0 +1,14 @@
+# DecGR on FDCompCN — hyperparameters of the paper
+seed: 1
+hidden: 64
+layers: 4          # L = 4 for FDCompCN
+k: 5               # top-k similar nodes per hyperedge
+dropout: 0.3
+lr: 0.001
+weight_decay: 0.0005
+epochs: 500
+patience: 30
+eval_every: 5
+lam: 0.3           # lambda of the universal-private contrastive loss
+dec_w: 1         # scaling of the decoupling loss (Eq. 25 uses 1.0; a smaller
+                   # weight is more stable on CPU with a short schedule)
