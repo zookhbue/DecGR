@@ -1,4 +1,4 @@
-# DecGR — (run on the FDCompCN dataset)
+# DecGR
 
 A runnable implementation of DecGR (decoupled graph representation with
 universal–private fusion).
