@@ -7,10 +7,6 @@ import torch.nn.functional as F
 from sklearn.neighbors import NearestNeighbors
 
 # --------------------------------------------------------------------------- #
-def seg_sum(v: torch.Tensor, idx: torch.Tensor, n: int) -> torch.Tensor:
-    out = torch.zeros(n, v.shape[-1], dtype=v.dtype, device=v.device)
-    return out.index_add(0, idx, v)
-
 
 def seg_softmax(s: torch.Tensor, idx: torch.Tensor, n: int) -> torch.Tensor:
     mx = torch.full((n,), -torch.inf, dtype=s.dtype, device=s.device)
